@@ -8,7 +8,7 @@ We will release the code soon.
 Two authors of this paper are __looking for PhD positions for 2020 Fall__. Please let us know if you are interested.
 
 
-Shaokai Ye (shaokaiyeah@gmail.com) [CV](https://drive.google.com/open?id=1RpIoaqG7J2WrQOOrbB_tJPWEQiYYzP3q)
+Shaokai Ye (shaokaiyeah@gmail.com) [CV](http://bit.ly/2r333io)
 
 Research Interest
 
