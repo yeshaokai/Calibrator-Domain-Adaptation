@@ -12,6 +12,8 @@ Shaokai Ye (shaokaiyeah@gmail.com)
 
 Research Interest
 
+[CV](https://drive.google.com/open?id=1RpIoaqG7J2WrQOOrbB_tJPWEQiYYzP3q)
+
 Domain Adaptation, Robustness, Model Compression.
 
 Mu Zhou (jassica.zm53@gmail.com)
