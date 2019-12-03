@@ -14,7 +14,7 @@ Research Interest
 
 Domain Adaptation, Robustness, Model Compression.
 
-Mu Zhou (jassica.zm53@gmail.com)
+Mu Zhou (jassica.zm53@gmail.com) [CV](http://bit.ly/35XEm64)
 
 Research Interest
 
