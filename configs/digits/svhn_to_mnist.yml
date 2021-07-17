@@ -1,0 +1,36 @@
+DATASET:
+   SRC: "svhn"
+   TGT: "mnist"
+SRC_NET:
+   ARCH: "DTN"
+   SRC_LR: 0.0001
+   SRC_EPOCH: 100
+   BATCH_SIZE: 512
+   NUM_CLS: 10
+   WEIGHTS: ""   
+TRAIN:
+   GPU_ID: 0
+   DATA_DIR: "."
+   RESULT_DIR: "results"
+   NUM_WORKERS: 1
+   TASK: "classification"
+OPTIMIZER:
+    ADAM:
+       BETAS: (0.9,0.999)
+       WEIGHT_DECAY: 0
+CALIBRATOR:
+   CALI_EPOCH: 100
+   BATCH_SIZE: 512
+   CALI_LR: 0.0002
+   ARCH: "resnet_8"
+   NORM_TYPE: "instance"
+   L_INFTY_NORM: 0.8
+   CALI_WIDTH_FACTOR: 8
+   PATCH_SIZE: 8
+   RESOLUTION: 16
+   USE_SOFTMAX: True
+   USE_PIXEL: True
+   PIXEL_HIDDEN_DIM: 128
+   WEIGHTS: ""
+   BOX_MIN: -1
+   BOX_MAX: 1

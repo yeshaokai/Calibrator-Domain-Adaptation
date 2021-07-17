@@ -1,0 +1,10 @@
+__pycache__/
+cycada/*/__pycache__/
+scripts/.ipynb_checkpoints/
+.idea/data_calibrator.iml
+.idea/deployment.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/remote-mappings.xml
+.idea/vcs.xml

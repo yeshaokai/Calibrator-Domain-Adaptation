@@ -1,0 +1,11 @@
+torch
+numpy
+scipy
+torchvision
+tensorboardX
+tensorflow
+click
+tqdm
+requests
+colorlog
+pyyaml

@@ -1,0 +1,224 @@
+LeNet
+DTN
+AddaNet
+fcn8s
+drn26
+drn42
+Calibrator
+CalibratorNet
+-------Training net--------
+DTNClassifier(
+  (conv_params): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): Dropout2d(p=0.1)
+    (3): ReLU()
+    (4): Conv2d(64, 128, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2))
+    (5): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Dropout2d(p=0.3)
+    (7): ReLU()
+    (8): Conv2d(128, 256, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2))
+    (9): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): Dropout2d(p=0.5)
+    (11): ReLU()
+  )
+  (fc_params): Sequential(
+    (0): Linear(in_features=4096, out_features=512, bias=True)
+    (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (classifier): Sequential(
+    (0): ReLU()
+    (1): Dropout(p=0.5)
+    (2): Linear(in_features=512, out_features=10, bias=True)
+  )
+  (criterion): CrossEntropyLoss()
+)
+get dataset: svhn ./svhn train
+Using downloaded and verified file: ./svhn/train_32x32.mat
+get dataset: svhn ./svhn test
+Downloading http://ufldl.stanford.edu/housenumbers/test_32x32.mat to ./svhn/test_32x32.mat
+Training DTN model for svhn
+[Train] Epoch: 0 [0/73257 (0%)]	Loss: 2.728143  Acc: 6.25
+[Train] Epoch: 0 [12800/73257 (17%)]	Loss: 2.361248  Acc: 10.16
+[Train] Epoch: 0 [25600/73257 (35%)]	Loss: 1.941637  Acc: 35.16
+[Train] Epoch: 0 [38400/73257 (52%)]	Loss: 1.658927  Acc: 46.88
+[Train] Epoch: 0 [51200/73257 (70%)]	Loss: 1.472490  Acc: 50.00
+[Train] Epoch: 0 [64000/73257 (87%)]	Loss: 1.299950  Acc: 56.25
+[Train] Epoch: 1 [0/73257 (0%)]	Loss: 1.087397  Acc: 66.41
+[Train] Epoch: 1 [12800/73257 (17%)]	Loss: 0.986386  Acc: 68.75
+[Train] Epoch: 1 [25600/73257 (35%)]	Loss: 0.809952  Acc: 75.00
+[Train] Epoch: 1 [38400/73257 (52%)]	Loss: 0.827775  Acc: 73.44
+[Train] Epoch: 1 [51200/73257 (70%)]	Loss: 0.863800  Acc: 71.09
+[Train] Epoch: 1 [64000/73257 (87%)]	Loss: 0.844412  Acc: 73.44
+[Train] Epoch: 2 [0/73257 (0%)]	Loss: 0.686387  Acc: 79.69
+[Train] Epoch: 2 [12800/73257 (17%)]	Loss: 0.750912  Acc: 77.34
+[Train] Epoch: 2 [25600/73257 (35%)]	Loss: 0.795832  Acc: 72.66
+[Train] Epoch: 2 [38400/73257 (52%)]	Loss: 0.837965  Acc: 73.44
+[Train] Epoch: 2 [51200/73257 (70%)]	Loss: 0.683890  Acc: 77.34
+[Train] Epoch: 2 [64000/73257 (87%)]	Loss: 0.606669  Acc: 80.47
+[Train] Epoch: 3 [0/73257 (0%)]	Loss: 0.584619  Acc: 83.59
+[Train] Epoch: 3 [12800/73257 (17%)]	Loss: 0.422857  Acc: 88.28
+[Train] Epoch: 3 [25600/73257 (35%)]	Loss: 0.386078  Acc: 85.94
+[Train] Epoch: 3 [38400/73257 (52%)]	Loss: 0.573882  Acc: 82.81
+[Train] Epoch: 3 [51200/73257 (70%)]	Loss: 0.500336  Acc: 84.38
+[Train] Epoch: 3 [64000/73257 (87%)]	Loss: 0.683815  Acc: 80.47
+[Train] Epoch: 4 [0/73257 (0%)]	Loss: 0.476576  Acc: 85.16
+[Train] Epoch: 4 [12800/73257 (17%)]	Loss: 0.398025  Acc: 84.38
+[Train] Epoch: 4 [25600/73257 (35%)]	Loss: 0.399387  Acc: 88.28
+[Train] Epoch: 4 [38400/73257 (52%)]	Loss: 0.441898  Acc: 88.28
+[Train] Epoch: 4 [51200/73257 (70%)]	Loss: 0.392619  Acc: 89.84
+[Train] Epoch: 4 [64000/73257 (87%)]	Loss: 0.389973  Acc: 88.28
+[Train] Epoch: 5 [0/73257 (0%)]	Loss: 0.427227  Acc: 88.28
+[Train] Epoch: 5 [12800/73257 (17%)]	Loss: 0.394103  Acc: 85.94
+[Train] Epoch: 5 [25600/73257 (35%)]	Loss: 0.434544  Acc: 84.38
+[Train] Epoch: 5 [38400/73257 (52%)]	Loss: 0.496379  Acc: 87.50
+[Train] Epoch: 5 [51200/73257 (70%)]	Loss: 0.330281  Acc: 88.28
+[Train] Epoch: 5 [64000/73257 (87%)]	Loss: 0.614748  Acc: 82.03
+[Train] Epoch: 6 [0/73257 (0%)]	Loss: 0.533663  Acc: 82.03
+[Train] Epoch: 6 [12800/73257 (17%)]	Loss: 0.380371  Acc: 90.62
+[Train] Epoch: 6 [25600/73257 (35%)]	Loss: 0.433893  Acc: 85.16
+[Train] Epoch: 6 [38400/73257 (52%)]	Loss: 0.466630  Acc: 87.50
+[Train] Epoch: 6 [51200/73257 (70%)]	Loss: 0.248623  Acc: 92.97
+[Train] Epoch: 6 [64000/73257 (87%)]	Loss: 0.387732  Acc: 89.84
+[Train] Epoch: 7 [0/73257 (0%)]	Loss: 0.482305  Acc: 85.16
+[Train] Epoch: 7 [12800/73257 (17%)]	Loss: 0.287367  Acc: 89.84
+[Train] Epoch: 7 [25600/73257 (35%)]	Loss: 0.264277  Acc: 92.97
+[Train] Epoch: 7 [38400/73257 (52%)]	Loss: 0.321015  Acc: 89.06
+[Train] Epoch: 7 [51200/73257 (70%)]	Loss: 0.363113  Acc: 88.28
+[Train] Epoch: 7 [64000/73257 (87%)]	Loss: 0.460349  Acc: 89.06
+[Train] Epoch: 8 [0/73257 (0%)]	Loss: 0.332667  Acc: 89.84
+[Train] Epoch: 8 [12800/73257 (17%)]	Loss: 0.377097  Acc: 89.84
+[Train] Epoch: 8 [25600/73257 (35%)]	Loss: 0.314108  Acc: 91.41
+[Train] Epoch: 8 [38400/73257 (52%)]	Loss: 0.398269  Acc: 87.50
+[Train] Epoch: 8 [51200/73257 (70%)]	Loss: 0.397928  Acc: 88.28
+[Train] Epoch: 8 [64000/73257 (87%)]	Loss: 0.299454  Acc: 89.84
+[Train] Epoch: 9 [0/73257 (0%)]	Loss: 0.397799  Acc: 86.72
+[Train] Epoch: 9 [12800/73257 (17%)]	Loss: 0.296828  Acc: 89.06
+[Train] Epoch: 9 [25600/73257 (35%)]	Loss: 0.314606  Acc: 91.41
+[Train] Epoch: 9 [38400/73257 (52%)]	Loss: 0.315409  Acc: 88.28
+[Train] Epoch: 9 [51200/73257 (70%)]	Loss: 0.304108  Acc: 89.84
+[Train] Epoch: 9 [64000/73257 (87%)]	Loss: 0.411440  Acc: 84.38
+Evaluating DTN-svhn model on svhn test set
+[Evaluate] Average loss: 0.3185, Accuracy: 23518/26032 (90.00%)
+
+Saving to results/svhn_to_mnist/iter_1/DTN_net_svhn.pth
+initialize network with normal
+CalibratorNet(
+  (cls_criterion): CrossEntropyLoss()
+  (gan_criterion): CrossEntropyLoss()
+  (src_net): DTNClassifier(
+    (conv_params): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.1)
+      (3): ReLU()
+      (4): Conv2d(64, 128, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2))
+      (5): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.3)
+      (7): ReLU()
+      (8): Conv2d(128, 256, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2))
+      (9): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5)
+      (11): ReLU()
+    )
+    (fc_params): Sequential(
+      (0): Linear(in_features=4096, out_features=512, bias=True)
+      (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (classifier): Sequential(
+      (0): ReLU()
+      (1): Dropout(p=0.5)
+      (2): Linear(in_features=512, out_features=10, bias=True)
+    )
+    (criterion): CrossEntropyLoss()
+  )
+  (calibrator_net): Calibrator(
+    (cali): ResnetGenerator(
+      (model): Sequential(
+        (0): ReflectionPad2d((3, 3, 3, 3))
+        (1): Conv2d(3, 32, kernel_size=(7, 7), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): ReLU(inplace)
+        (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (6): ReLU(inplace)
+        (7): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (8): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (9): ReLU(inplace)
+        (10): ResnetBlock(
+          (conv_block): Sequential(
+            (0): ReflectionPad2d((1, 1, 1, 1))
+            (1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+            (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (3): ReLU(inplace)
+            (4): ReflectionPad2d((1, 1, 1, 1))
+            (5): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+            (6): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (11): ResnetBlock(
+          (conv_block): Sequential(
+            (0): ReflectionPad2d((1, 1, 1, 1))
+            (1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+            (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (3): ReLU(inplace)
+            (4): ReflectionPad2d((1, 1, 1, 1))
+            (5): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+            (6): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (12): ResnetBlock(
+          (conv_block): Sequential(
+            (0): ReflectionPad2d((1, 1, 1, 1))
+            (1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+            (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (3): ReLU(inplace)
+            (4): ReflectionPad2d((1, 1, 1, 1))
+            (5): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+            (6): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (13): ResnetBlock(
+          (conv_block): Sequential(
+            (0): ReflectionPad2d((1, 1, 1, 1))
+            (1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+            (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (3): ReLU(inplace)
+            (4): ReflectionPad2d((1, 1, 1, 1))
+            (5): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+            (6): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (14): ConvTranspose2d(128, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), output_padding=(1, 1), bias=False)
+        (15): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (16): ReLU(inplace)
+        (17): ConvTranspose2d(64, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), output_padding=(1, 1), bias=False)
+        (18): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (19): ReLU(inplace)
+        (20): ReflectionPad2d((3, 3, 3, 3))
+        (21): Conv2d(32, 3, kernel_size=(7, 7), stride=(1, 1))
+        (22): Tanh()
+      )
+    )
+  )
+  (discriminator): Sequential(
+    (0): Linear(in_features=10, out_features=500, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=500, out_features=500, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=500, out_features=2, bias=True)
+  )
+)
+Training Adda DTN model for svhn->mnist
+get dataset: svhn ./svhn train
+Using downloaded and verified file: ./svhn/train_32x32.mat
+get dataset: svhn ./svhn test
+Using downloaded and verified file: ./svhn/test_32x32.mat
+get dataset: mnist ./mnist train
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Processing...
+Done!
+get dataset: mnist ./mnist test
